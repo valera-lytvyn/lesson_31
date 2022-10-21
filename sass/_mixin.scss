@@ -1,0 +1,18 @@
+@mixin size($h, $w) {
+   height: $h;
+   width: $w;
+}
+@mixin display($df,$jc,$ai) {
+   display: $df;
+   justify-content: $jc;
+   align-items: $ai;
+}
+@mixin font($fs,$ff,$fw,$ls,$lh,$color_w) {
+   font-size: $fs;
+   font-family: $ff;
+   font-weight: $fw;
+   letter-spacing: $ls;
+   line-height: $lh;
+   color: $color_w;
+   }
+ 

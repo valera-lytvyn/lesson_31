@@ -1,0 +1,47 @@
+.wrapper {
+  font-size: 22px;
+  font-family: "Arial";
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 24px;
+  color: #232323; }
+  .wrapper .searchMovies {
+    display: flex;
+    flex-direction: column; }
+    .wrapper .searchMovies .inputPart {
+      width: 100%; }
+      .wrapper .searchMovies .inputPart .inputSearch {
+        margin: 15px;
+        border: 1px solid orange;
+        width: 25%;
+        min-width: 300px;
+        min-height: 50px;
+        border-radius: 10px;
+        font-size: 22px;
+        font-family: "Arial";
+        font-weight: 400;
+        letter-spacing: 2px;
+        line-height: 50px;
+        color: #232323; }
+        .wrapper .searchMovies .inputPart .inputSearch:placeholder-shown {
+          text-indent: 10px;
+          justify-items: center; }
+    .wrapper .searchMovies .radioPart input[type=radio] {
+      accent-color: orange;
+      margin-left: 15px; }
+    .wrapper .searchMovies .radioPart label {
+      margin-left: 5px; }
+    .wrapper .searchMovies .buttonPart {
+      width: 100%; }
+      .wrapper .searchMovies .buttonPart .buttonSearch {
+        margin: 15px;
+        min-width: 200px;
+        background: orange;
+        border-radius: 10px;
+        min-height: 50px;
+        font-size: 28px;
+        font-family: "Arial";
+        font-weight: 400;
+        letter-spacing: 5px;
+        line-height: 50px;
+        color: #232323; }

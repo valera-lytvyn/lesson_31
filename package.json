@@ -1,0 +1,16 @@
+{
+  "name": "lesson_31",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "node-sass --watch sass -o css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.3",
+    "sass-loader": "^13.1.0"
+  }
+}

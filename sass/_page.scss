@@ -1,0 +1,57 @@
+.wrapper {
+   // @include size($h, $w);
+   @include font(22px, $ff, 400, 2px, 24px, $color_23);
+
+   .searchMovies {
+      // @include size(auto, $w);
+      display: flex;
+      flex-direction: column;
+
+
+      .inputPart {
+         width: 100%;
+
+
+         .inputSearch {
+            margin: 15px;
+            border: 1px solid orange;
+            width: 25%;
+            min-width: 300px;
+            min-height: 50px;
+            border-radius: 10px;
+            @include font(22px, $ff, 400, 2px, 50px, $color_23);
+
+
+            &:placeholder-shown {
+               text-indent: 10px;
+               justify-items: center;
+            }
+         }
+      }
+
+      .radioPart {
+
+         input[type=radio] {
+            accent-color: orange;
+            margin-left: 15px;
+         }
+
+         label {
+            margin-left: 5px;
+         }
+      }
+
+      .buttonPart {
+         width: 100%;
+
+         .buttonSearch {
+            margin: 15px;
+            min-width: 200px;
+            background: orange;
+            border-radius: 10px;
+            min-height: 50px;
+            @include font(28px, $ff, 400, 5px, 50px, $color_23);
+         }
+      }
+   }
+}

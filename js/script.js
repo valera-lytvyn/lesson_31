@@ -1,4 +1,5 @@
 "use strict";
+let searchQuery;
 let search = document.getElementById("searchFilm");
 let inputForm = document.forms.form;
 let input = inputForm.inputSearch;
@@ -17,6 +18,21 @@ let amount;
 let nextPage;
 let currentPage = 1;
 let info;
+let story;
+
+let clear = document.querySelector(".buttonClear");
+
+clear.addEventListener("click", function () {
+  localStorage.clear();
+});
+if (localStorage.length > 0 && !localStorage.getItem("message")) {
+  story = JSON.parse(localStorage.getItem("list"));
+  story;
+  showMoviesList(story);
+}
+if (localStorage.getItem("message")) {
+  showMessage();
+}
 
 search.addEventListener("click", clickSearch);
 input.addEventListener("keydown", function (event) {
@@ -44,7 +60,7 @@ let json = function (response) {
 };
 
 function clickSearch(currentPage) {
-  let searchQuery = input.value;
+  searchQuery = input.value;
   if (searchQuery != "") {
     fetch(
       `https://www.omdbapi.com/?s=${searchQuery}&type=${radio}&page=${currentPage}&apikey=465e935e&`
@@ -57,17 +73,22 @@ function clickSearch(currentPage) {
         } else {
           answer = response.Search;
           showMoviesList(answer);
+          localStorage.clear();
+          localStorage.setItem("list", JSON.stringify(answer));
           if (response.totalResults > 10) {
             createButtonResults(response.totalResults);
+            console.log(response.totalResults);
           }
         }
       });
-    search.after(resultWrap);
+    clear.after(resultWrap);
   }
 }
 
 function showMessage() {
   removeResult();
+  localStorage.clear();
+  localStorage.setItem("message", "Movie not found!");
   message.style.marginLeft = "15px";
   message.style.color = "red";
   message.innerHTML = "Movie not found!";
@@ -159,6 +180,9 @@ function changePage(event) {
 
 function clickDetailsMovie(event) {
   if (event.target.tagName === "BUTTON") {
+    if (answer === undefined) {
+      answer = story;
+    }
     let idMovie = event.target.id;
     let numberMovie = Number(idMovie.slice(4));
     let obj = answer[numberMovie];
@@ -201,8 +225,7 @@ function showDetailsMovie(title, type, year, poster) {
   let elem = document.createElement("div");
   info.append(elem);
   setTimeout(() => elem.scrollIntoView(), 500);
- }
-
+}
 
 function removeResult() {
   if (list != null) {

@@ -13,7 +13,7 @@
       .wrapper .searchMovies .inputPart .inputSearch {
         margin: 15px;
         border: 1px solid orange;
-        width: 25%;
+        width: 40%;
         min-width: 300px;
         min-height: 50px;
         border-radius: 10px;
@@ -26,14 +26,23 @@
         .wrapper .searchMovies .inputPart .inputSearch:placeholder-shown {
           text-indent: 10px;
           justify-items: center; }
-    .wrapper .searchMovies .radioPart input[type=radio] {
-      accent-color: orange;
-      margin-left: 15px; }
-    .wrapper .searchMovies .radioPart label {
-      margin-left: 5px; }
+      @media (max-width: 992px) {
+        .wrapper .searchMovies .inputPart .inputSearch {
+          width: 80%; } }
+      @media (max-width: 576px) {
+        .wrapper .searchMovies .inputPart .inputSearch {
+          width: 95%; } }
+    .wrapper .searchMovies .radioPart {
+      display: flex;
+      flex-wrap: nowrap; }
+      .wrapper .searchMovies .radioPart input[type=radio] {
+        accent-color: orange;
+        margin-left: 15px; }
+      .wrapper .searchMovies .radioPart label {
+        margin-left: 5px; }
     .wrapper .searchMovies .buttonPart {
       width: 100%; }
-      .wrapper .searchMovies .buttonPart .buttonSearch {
+      .wrapper .searchMovies .buttonPart .button {
         margin: 15px;
         min-width: 200px;
         background: orange;
